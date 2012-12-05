@@ -16,6 +16,20 @@ GCC_MD5 := cc308a0891e778cfda7a151ab8a6e762
 
 all: gcc-all binutils-all
 
+.PHONY: clean target-clean realclean distclean
+clean:
+	$(MAKE) -C $(GCC_BUILDDIR) clean
+	$(MAKE) -C $(BINUTILS_BUILDDIR) clean
+
+target-clean:
+	rm -rf $(GCC_BUILDDIR) $(BINUTILS_BUILDDIR)
+
+realclean: target-clean
+	rm -rf $(GCC_SRCDIR) $(BINUTILS_SRCDIR)
+
+distclean: realclean
+	rm -f $(GCC_FILENAME) $(BINUTILS_FILENAME)
+
 .PHONY: gcc-all
 gcc-all: $(GCC_SRCDIR) binutils-all
 	mkdir -p $(GCC_BUILDDIR) &&\
