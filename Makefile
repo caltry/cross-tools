@@ -43,7 +43,6 @@ gcc-all: $(GCC_SRCDIR) binutils-all
 	../$(GCC_SRCDIR)/configure \
 		--target=$(TARGET) \
 		--prefix=$(PREFIX) \
-		--disable-nls \
 		--enable-languages=$(LANGUAGES) \
 		--without-headers \
 		--disable-libssp \
@@ -58,8 +57,7 @@ binutils-all: $(BINUTILS_SRCDIR)
 	cd $(BINUTILS_BUILDDIR) &&\
 	../$(BINUTILS_SRCDIR)/configure \
 		--target=$(TARGET) \
-		--prefix=$(PREFIX) \
-		--disable-nls
+		--prefix=$(PREFIX)
 	$(MAKE) -C $(BINUTILS_BUILDDIR)
 	$(MAKE) -C $(BINUTILS_BUILDDIR) install
 
