@@ -1,5 +1,5 @@
-ARCH ?= arm
-TARGET ?= $(ARCH)-unknown-eabi
+TARGET_ARCH ?= arm
+TARGET ?= $(TARGET_ARCH)-none-eabi
 PREFIX ?= $(PWD)/arm-prefix
 LANGUAGES ?= c
 
