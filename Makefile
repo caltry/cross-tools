@@ -1,7 +1,7 @@
-TARGET_ARCH ?= arm
-TARGET ?= $(TARGET_ARCH)-none-eabi
-PREFIX ?= $(PWD)/arm-prefix
-LANGUAGES ?= c
+TARGET_ARCH := arm
+TARGET := $(TARGET_ARCH)-none-eabi
+PREFIX := $(PWD)/arm-prefix
+LANGUAGES := c
 
 BINUTILS_HOST := http://ftp.gnu.org/gnu/binutils/
 BINUTILS_SRCDIR := binutils-2.23.1
