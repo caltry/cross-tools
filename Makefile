@@ -1,6 +1,6 @@
 TARGET_ARCH := arm
 TARGET := $(TARGET_ARCH)-none-eabi
-PREFIX := $(PWD)/arm-prefix
+PREFIX := $(PWD)/local-prefix
 LANGUAGES := c
 
 BINUTILS_HOST := http://ftp.gnu.org/gnu/binutils/
