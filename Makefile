@@ -1,5 +1,4 @@
-TARGET_ARCH := arm
-TARGET := $(TARGET_ARCH)-none-eabi
+TARGET := arm-none-eabi
 PREFIX := $(PWD)/local-prefix
 LANGUAGES := c
 
