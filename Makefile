@@ -18,7 +18,11 @@ GDB_SRCDIR := gdb-7.5.1
 GDB_BUILDDIR := build-gdb
 GDB_FILENAME := gdb-7.5.1.tar.bz2
 
+.PHONY: all
 all: gcc-all binutils-all gdb-all
+
+.PHONY: fetch
+fetch: $(GCC_FILENAME) $(BINUTILS_FILENAME) $(GDB_FILENAME)
 
 .PHONY: clean target-clean realclean distclean
 clean:
