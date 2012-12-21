@@ -24,13 +24,8 @@ all: gcc-all binutils-all gdb-all
 .PHONY: fetch
 fetch: $(GCC_FILENAME) $(BINUTILS_FILENAME) $(GDB_FILENAME)
 
-.PHONY: clean target-clean realclean distclean
+.PHONY: clean realclean distclean
 clean:
-	$(MAKE) -C $(GCC_BUILDDIR) clean
-	$(MAKE) -C $(BINUTILS_BUILDDIR) clean
-	$(MAKE) -C $(GDB_BUILDDIR) clean
-
-target-clean:
 	rm -rf $(GCC_BUILDDIR) $(BINUTILS_BUILDDIR) $(GDB_BUILDDIR)
 
 realclean: target-clean
