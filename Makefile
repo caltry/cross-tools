@@ -28,7 +28,7 @@ fetch: $(GCC_FILENAME) $(BINUTILS_FILENAME) $(GDB_FILENAME)
 clean:
 	rm -rf $(GCC_BUILDDIR) $(BINUTILS_BUILDDIR) $(GDB_BUILDDIR)
 
-realclean: target-clean
+realclean: target
 	rm -rf $(GCC_SRCDIR) $(BINUTILS_SRCDIR) $(GDB_SRCDIR)
 
 distclean: realclean
