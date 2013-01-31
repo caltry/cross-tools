@@ -1,0 +1,22 @@
+cross-tools makes setting up a new cross compiler for barebones OS development
+easier. A safe set of configuration options has been chosen for each of the
+program that you need for building for your target platform.
+
+By default, (i.e., just running 'make'), it will install:
+* GNU Binutils
+* GCC
+* GDB
+
+The default target host triple is arm-none-eabi. You can change this target by
+setting the TARGET variable for make:
+
+    make [target] TARGET=mipsel
+
+You can install the tools for multiple host targets by running 'make clean' in
+between each target. The tools for each target will all be installed along side
+each-other.
+
+The default installation location is $PWD/local-prefix. You can change the
+installation location by setting the PREFIX variable for make:
+
+    make [target] PREFIX=/usr/local
