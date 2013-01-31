@@ -21,8 +21,10 @@ GDB_FILENAME := gdb-7.5.1.tar.bz2
 .PHONY: all
 all: gcc-all binutils-all gdb-all
 
-.PHONY: fetch
+.PHONY: fetch extract
 fetch: $(GCC_FILENAME) $(BINUTILS_FILENAME) $(GDB_FILENAME)
+
+extract: $(GCC_SRCDIR) $(BINUTILS_SRCDIR) $(GDB_SRCDIR)
 
 .PHONY: clean realclean distclean
 clean:
