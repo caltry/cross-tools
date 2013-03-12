@@ -2,18 +2,18 @@ TARGET := arm-none-eabi
 PREFIX := $(PWD)/local-prefix
 LANGUAGES := c
 
-BINUTILS_HOST := http://ftp.gnu.org/gnu/binutils/
+BINUTILS_HOST := http://ftp.gnu.org/gnu/binutils
 BINUTILS_SRCDIR := binutils-2.23.1
 BINUTILS_BUILDDIR := build-binutils
 BINUTILS_FILENAME := binutils-2.23.1.tar.bz2
 
-GCC_HOST := http://gcc.petsads.us/releases/gcc-4.7.2/
+GCC_HOST := http://ftpmirror.gnu.org/gcc/gcc-4.7.2
 GCC_SRCDIR := gcc-4.7.2
 GCC_BUILDDIR := build-gcc
 GCC_FILENAME := gcc-4.7.2.tar.bz2
 GCC_MD5 := cc308a0891e778cfda7a151ab8a6e762
 
-GDB_HOST := ftp://sourceware.org/pub/gdb/releases/
+GDB_HOST := ftp://sourceware.org/pub/gdb/releases
 GDB_SRCDIR := gdb-7.5.1
 GDB_BUILDDIR := build-gdb
 GDB_FILENAME := gdb-7.5.1.tar.bz2
