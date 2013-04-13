@@ -7,10 +7,10 @@ BINUTILS_SRCDIR := binutils-2.23.1
 BINUTILS_BUILDDIR := build-binutils
 BINUTILS_FILENAME := binutils-2.23.1.tar.bz2
 
-GCC_HOST := http://ftpmirror.gnu.org/gcc/gcc-4.7.2
-GCC_SRCDIR := gcc-4.7.2
+GCC_HOST := http://ftpmirror.gnu.org/gcc/gcc-4.7.3
+GCC_SRCDIR := gcc-4.7.3
 GCC_BUILDDIR := build-gcc
-GCC_FILENAME := gcc-4.7.2.tar.bz2
+GCC_FILENAME := gcc-4.7.3.tar.bz2
 GCC_MD5 := cc308a0891e778cfda7a151ab8a6e762
 
 GDB_HOST := ftp://sourceware.org/pub/gdb/releases
@@ -37,7 +37,7 @@ distclean: realclean
 	rm -f $(GCC_FILENAME) $(BINUTILS_FILENAME) $(GDB_FILENAME)
 
 .PHONY: gcc-all
-gcc-all: $(GCC_SRCDIR) binutils-all
+gcc-all: $(GCC_SRCDIR) | $(BINUTILS_BUILDDIR)
 	mkdir -p $(GCC_BUILDDIR) &&\
 	cd $(GCC_BUILDDIR) &&\
 	../$(GCC_SRCDIR)/configure \
@@ -52,7 +52,7 @@ gcc-all: $(GCC_SRCDIR) binutils-all
 	$(MAKE) -C $(GCC_BUILDDIR) install
 
 .PHONY: binutils-all
-binutils-all: $(BINUTILS_SRCDIR)
+binutils-all $(BINUTILS_BUILDDIR): $(BINUTILS_SRCDIR)
 	mkdir -p $(BINUTILS_BUILDDIR) &&\
 	cd $(BINUTILS_BUILDDIR) &&\
 	../$(BINUTILS_SRCDIR)/configure \

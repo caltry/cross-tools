@@ -4,7 +4,7 @@ program that you need for building for your target platform.
 
 By default, (i.e., just running 'make'), it will install:
 * GNU Binutils
-* GCC
+* GCC (C language only)
 * GDB
 
 The default target host triple is arm-none-eabi. You can change this target by
